@@ -55,6 +55,24 @@
 
       container.innerHTML = '<div class="fb-grid">' + html + '</div>' +
         '<p class="fb-follow"><a href="https://www.facebook.com/irenestravel" target="_blank" rel="noopener">Follow Irene\u2019s Travel on Facebook</a></p>';
+
+      /* Match each video player's aspect ratio to its post thumbnail
+         (same shape as the video), so horizontal videos don't leave a
+         tall black block and vertical videos stay tall. Falls back to
+         the CSS 16/9 default if a thumbnail can't be loaded. */
+      var videoPosts = posts.filter(function (p) { return p.type === 'video' && p.permalink_url; });
+      var videoFrames = container.querySelectorAll('.fb-video');
+      Array.prototype.forEach.call(videoFrames, function (frame, i) {
+        var post = videoPosts[i];
+        if (!post || !post.full_picture) return;
+        var thumb = new Image();
+        thumb.onload = function () {
+          if (thumb.naturalWidth && thumb.naturalHeight) {
+            frame.style.aspectRatio = thumb.naturalWidth + ' / ' + thumb.naturalHeight;
+          }
+        };
+        thumb.src = post.full_picture;
+      });
     })
     .catch(function () {
       /* Fallback: no broken box, just the link. */
