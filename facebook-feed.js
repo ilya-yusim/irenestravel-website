@@ -36,10 +36,14 @@
       if (!posts.length) throw new Error('no posts');
 
       var html = posts.map(function (post) {
-        var image = post.full_picture
-          ? '<a href="' + escapeHtml(post.permalink_url) + '" target="_blank" rel="noopener">' +
-            '<img src="' + escapeHtml(post.full_picture) + '" alt="" loading="lazy"></a>'
-          : '';
+        var media = '';
+        if (post.type === 'video' && post.permalink_url) {
+          media = '<iframe class="fb-video" src="https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(post.permalink_url) + '&show_text=false&width=500" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook video"></iframe>';
+        } else if (post.full_picture) {
+          media = '<a href="' + escapeHtml(post.permalink_url) + '" target="_blank" rel="noopener">' +
+            '<img src="' + escapeHtml(post.full_picture) + '" alt="" loading="lazy"></a>';
+        }
+        var image = media;
         var badge = post.type === 'video' ? '<span class="fb-badge">Video</span>' : '';
         return '<article class="fb-card">' + image +
           '<div class="fb-card-body">' +
