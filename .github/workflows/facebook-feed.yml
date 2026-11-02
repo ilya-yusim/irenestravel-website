@@ -1,0 +1,40 @@
+# Irene's Travel Facebook feed — GitHub Action
+# The token is read from the repo secret FB_PAGE_ACCESS_TOKEN, never written in code.
+#
+# What it does, daily at 12:00 UTC (8:00 a.m. EDT / 7:00 a.m. EST):
+#   1. Calls the Graph API Page Feed for Page 87861582927 (irenestravel).
+#   2. Keeps the newest 6 posts, writes data/facebook-posts.json.
+#   3. Commits ONLY if the file actually changed.
+#   4. On any API error, exits without writing — the last good JSON stays live.
+# It can also be run manually from GitHub Actions (workflow_dispatch).
+
+name: Update Facebook feed
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Fetch latest Page posts
+        env:
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: '87861582927'
+        run: bash scripts/fetch-facebook-posts.sh
+
+      - name: Commit if changed
+        run: |
+          git config user.name "facebook-feed-bot"
+          git config user.email "facebook-feed-bot@users.noreply.github.com"
+          git add data/facebook-posts.json
+          git diff --cached --quiet || git commit -m "Update Facebook feed"
+          git push
