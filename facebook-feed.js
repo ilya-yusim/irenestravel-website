@@ -1,6 +1,8 @@
 /* Irene's Travel Facebook feed renderer.
    Fetches data/facebook-posts.json, written by the scheduled GitHub Action.
-   Contains NO access token and makes NO call to Facebook. If the JSON cannot
+   Contains NO access token and makes NO Graph API call. It does load
+   Facebook's SDK script once as a blocking probe (see probeFacebook).
+   If the JSON cannot
    be loaded, the section falls back to the Facebook link only. */
 (function () {
   var container = document.getElementById('facebook-feed');
@@ -29,15 +31,33 @@
     return text;
   }
 
+
+  /* Probe: Edge Strict tracking prevention (and some ad blockers) block
+     Facebook embeds, but browsers do not expose the setting itself, so
+     test whether a Facebook script loads. If it does not load within
+     2.5s, video cards fall back to thumbnails + links instead of a
+     blocked iframe. No token, no Graph API call, no FB init. */
+  function probeFacebook(cb) {
+    var done = false;
+    function finish(ok) { if (done) return; done = true; cb(ok); }
+    var s = document.createElement('script');
+    s.src = 'https://connect.facebook.net/en_US/sdk.js';
+    s.onload = function () { finish(true); };
+    s.onerror = function () { finish(false); };
+    setTimeout(function () { finish(false); }, 2500);
+    document.head.appendChild(s);
+  }
+
   fetch('data/facebook-posts.json', { cache: 'no-store' })
     .then(function (res) { if (!res.ok) throw new Error('feed unavailable'); return res.json(); })
     .then(function (data) {
       var posts = (data && data.posts ? data.posts : []).slice(0, MAX_POSTS);
       if (!posts.length) throw new Error('no posts');
+      var render = function (canPlayVideo) {
 
       var html = posts.map(function (post) {
         var media = '';
-        if (post.type === 'video' && post.permalink_url) {
+        if (post.type === 'video' && post.permalink_url && canPlayVideo) {
           media = '<iframe class="fb-video" src="https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(post.permalink_url) + '&show_text=false&width=500" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook video"></iframe>';
         } else if (post.full_picture) {
           media = '<a href="' + escapeHtml(post.permalink_url) + '" target="_blank" rel="noopener">' +
@@ -73,6 +93,8 @@
         };
         thumb.src = post.full_picture;
       });
+      };
+      probeFacebook(render);
     })
     .catch(function () {
       /* Fallback: no broken box, just the link. */
