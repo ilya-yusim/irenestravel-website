@@ -1,1 +1,446 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plan My Trip | Irene’s Travel</title><meta name="description" content="Start planning a vacation with Irene’s Travel. Share your destination, travel dates, travelers, budget and priorities."><link rel="canonical" href="https://www.irenestravel.com/plan-my-trip.html"><link rel="stylesheet" href="styles.css"><script type="application/ld+json">[{"@context": "https://schema.org", "@type": "TravelAgency", "name": "Irene's Travel", "url": "https://www.irenestravel.com/", "email": "info@irenestravel.com", "telephone": "+1-408-905-8747", "address": {"@type": "PostalAddress", "addressLocality": "San Jose", "addressRegion": "CA", "addressCountry": "US"}, "areaServed": "United States", "founder": {"@type": "Person", "name": "Irene Yusim"}}, {"@context": "https://schema.org", "@type": "WebPage", "name": "Plan My Trip | Irene\u2019s Travel", "description": "Start planning a vacation with Irene\u2019s Travel. Share your destination, travel dates, travelers, budget and priorities.", "url": "https://www.irenestravel.com/plan-my-trip.html", "isPartOf": {"@type": "WebSite", "name": "Irene's Travel", "url": "https://www.irenestravel.com/"}}]</script></head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="Irene's Travel logo"></a><nav class="menu"><a class="" href="africa.html">Africa</a><a class="" href="tahiti.html">Tahiti</a><a class="" href="mexico-caribbean.html">Mexico & Caribbean</a><a class="" href="cruises.html">Cruises</a><a class="" href="honeymoons.html">Honeymoons</a><a class="" href="families-groups.html">Families & Groups</a><a class="" href="about.html">About Irene</a><a class="btn" href="plan-my-trip.html">Plan My Trip</a></nav></div></header><section class="page-hero"><div class="wrap"><div class="eyebrow">Start here</div><h1>Plan My Trip</h1><p class="lead">Tell me enough to understand the trip you have in mind. I’ll take it from there.</p></div></section><section class="section"><div class="wrap form-wrap"><form action="mailto:info@irenestravel.com" method="post" enctype="text/plain"><div class="row"><div><label>Name</label><input name="Name" required></div><div><label>Email</label><input type="email" name="Email" required></div></div><div class="row"><div><label>Where are you thinking about going?</label><input name="Destination"></div><div><label>Travel dates or timeframe</label><input name="Dates"></div></div><div class="row"><div><label>Number of travelers</label><input name="Travelers"></div><div><label>Approximate trip budget</label><input name="Budget"></div></div><div><label>What matters most on this trip?</label><textarea name="Priorities"></textarea></div><button class="btn" type="submit">Send Trip Request</button></form></div></section><footer><div class="wrap foot"><div><img class="logo" src="assets/logo.png" alt="Irene's Travel"><p class="small">Personal travel planning from San Jose, California. Africa, Tahiti, Mexico, Caribbean, cruises, honeymoons, families and groups.</p></div><div><strong>Specialties</strong><p><a href="africa.html">Africa</a><br><a href="tahiti.html">Tahiti</a><br><a href="mexico-caribbean.html">Mexico & Caribbean</a><br><a href="cruises.html">Cruises</a><br><a href="honeymoons.html">Honeymoons</a></p></div><div><strong>Contact</strong><p><a href="mailto:info@irenestravel.com">info@irenestravel.com</a><br>(408) 905-8747<br>San Jose, California</p></div></div></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="light dark"><meta name="description" content="Start planning a vacation with Irene's Travel. Share your destination, travel dates, travelers, budget and priorities."><link rel="canonical" href="https://www.irenestravel.com/plan-my-trip.html"><title>Plan With Irene | Irene's Travel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"><style>
+ :root {
+ color-scheme: light dark;
+ --ocean: #07666a;
+ --ocean-deep: #06484d;
+ --ocean-soft: #d8f0ec;
+ --sun: #edb542;
+ --sun-soft: #fff0c5;
+ --palm: #336744;
+ --sand: #f6e8cd;
+ --paper: #fffdf7;
+ --paper-2: #f8f2e7;
+ --ink: #173438;
+ --muted: #526a6b;
+ --line: #d7ddd6;
+ --white: #ffffff;
+ --shadow: 0 18px 48px rgba(8, 72, 77, .14);
+ }
+
+ @media (prefers-color-scheme: dark) {
+ :root {
+ --ocean: #63c9c6;
+ --ocean-deep: #b6e9e4;
+ --ocean-soft: #153f40;
+ --sun: #f6c761;
+ --sun-soft: #473a1e;
+ --palm: #8fc49d;
+ --sand: #3a3224;
+ --paper: #101c1e;
+ --paper-2: #182629;
+ --ink: #f2f5ef;
+ --muted: #c2d0cc;
+ --line: #344648;
+ --white: #102022;
+ --shadow: 0 18px 48px rgba(0, 0, 0, .3);
+ }
+ }
+
+ * { box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body {
+ margin: 0;
+ background: var(--paper);
+ color: var(--ink);
+ font-family: "DM Sans", sans-serif;
+ line-height: 1.6;
+ overflow-x: hidden;
+ }
+ img { display: block; width: 100%; }
+ a { color: inherit; }
+ .skip-link {
+ position: fixed;
+ left: 1rem;
+ top: -5rem;
+ z-index: 20;
+ background: var(--ink);
+ color: var(--paper);
+ padding: .75rem 1rem;
+ border-radius: 0 0 8px 8px;
+ }
+ .skip-link:focus { top: 0; }
+ .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+ header {
+ position: sticky;
+ top: 0;
+ z-index: 10;
+ border-bottom: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+ background: color-mix(in srgb, var(--paper) 94%, transparent);
+ backdrop-filter: blur(14px);
+ }
+ .nav {
+ min-height: 74px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1.25rem;
+ }
+ .nav-contact { display: flex; align-items: center; gap: 1.1rem; }
+ .nav-email { font-size: .92rem; color: var(--muted); text-decoration: none; white-space: nowrap; }
+ .nav-email:hover { text-decoration: underline; }
+ .wordmark {
+ text-decoration: none;
+ display: inline-flex;
+ align-items: baseline;
+ gap: .45rem;
+ font-family: "Libre Baskerville", serif;
+ font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+ font-weight: 700;
+ letter-spacing: -.02em;
+ }
+ .wordmark small {
+ font-family: "DM Sans", sans-serif;
+ color: var(--palm);
+ font-size: .7rem;
+ font-weight: 700;
+ letter-spacing: .1em;
+ text-transform: uppercase;
+ }
+ .button {
+ min-height: 48px;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: .55rem;
+ padding: .72rem 1.15rem;
+ border: 1px solid transparent;
+ border-radius: 999px;
+ font-weight: 700;
+ line-height: 1.2;
+ text-decoration: none;
+ transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+ }
+ .button:hover { transform: translateY(-2px); }
+ .button:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+ .button-primary { background: var(--ocean-deep); color: var(--paper); }
+ .button-secondary { border-color: currentColor; color: var(--ocean-deep); background: transparent; }
+ .button-white { background: #fff; color: #084a4c; }
+
+ .hero {
+ min-height: 690px;
+ display: grid;
+ grid-template-columns: minmax(0, .92fr) minmax(400px, 1.08fr);
+ align-items: stretch;
+ background: var(--sand);
+ }
+ .hero-copy {
+ position: relative;
+ z-index: 1;
+ align-self: center;
+ padding: 86px max(40px, calc((100vw - 1180px) / 2)) 86px max(40px, calc((100vw - 1180px) / 2));
+ padding-right: clamp(40px, 6vw, 90px);
+ }
+ .eyebrow {
+ display: flex;
+ align-items: center;
+ gap: .75rem;
+ margin: 0 0 1.25rem;
+ color: var(--palm);
+ font-size: .79rem;
+ font-weight: 700;
+ letter-spacing: .11em;
+ text-transform: uppercase;
+ }
+ .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--sun); }
+ h1, h2, h3 { margin-top: 0; font-family: "Libre Baskerville", serif; line-height: 1.12; }
+ h1 {
+ max-width: 650px;
+ margin-bottom: 1.35rem;
+ font-size: clamp(2.9rem, 5vw, 5.25rem);
+ letter-spacing: -.055em;
+ }
+ .hero-sub {
+ max-width: 560px;
+ margin: 0;
+ color: var(--muted);
+ font-size: clamp(1.08rem, 1.55vw, 1.3rem);
+ }
+ .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+ .hero-actions .button { flex: 1 1 0; text-align: center; white-space: nowrap; }
+ .hero-reviews, .reviews-row { margin-top: 1rem; font-size: .95rem; }
+ .hero-media { display: grid; place-items: center; padding: 64px 48px; }
+ .hero-photo { position: relative; width: min(100%, 400px); margin: 0; }
+ .hero-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; box-shadow: 0 24px 60px -24px rgb(0 0 0 / .35); }
+ .experience-tag {
+ position: absolute;
+ right: -24px;
+ bottom: 24px;
+ width: 144px;
+ height: 144px;
+ border-radius: 50%;
+ display: grid;
+ place-items: center;
+ text-align: center;
+ background: var(--sun);
+ color: #1e382f;
+ font-family: "Libre Baskerville", serif;
+ font-weight: 700;
+ line-height: 1.3;
+ box-shadow: var(--shadow);
+ transform: rotate(-5deg);
+ }
+
+ section { padding: 104px 0; }
+ .section-head { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: end; margin-bottom: 46px; }
+ .section-head h2, .about h2, .contact h2 { margin-bottom: 0; font-size: clamp(2rem, 4vw, 3.45rem); letter-spacing: -.045em; }
+ .section-head p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+ .about { background: var(--ocean-deep); color: var(--paper); }
+ .about-grid { display: grid; grid-template-columns: 1fr; gap: clamp(50px, 8vw, 110px); align-items: center; }
+ .about-copy { max-width: 780px; }
+ .about-copy .eyebrow { color: var(--sun); }
+ .about-copy p { margin: 1.5rem 0 0; color: color-mix(in srgb, var(--paper) 84%, transparent); font-size: clamp(1.05rem, 1.8vw, 1.28rem); }
+
+ .specialties { background: var(--paper); }
+ .destination-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+ .destination {
+ position: relative;
+ min-height: 300px;
+ overflow: hidden;
+ background: var(--paper-2);
+ color: #fff;
+ }
+ .destination::after {
+ content: "";
+ position: absolute;
+ left: 0; right: 0; bottom: 0;
+ height: 50%;
+ background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+ pointer-events: none;
+ }
+ 
+ 
+ .destination img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+ .destination:hover img { transform: scale(1.035); }
+ 
+ .card-sub { position: absolute; z-index: 1; left: 16px; right: 16px; bottom: 14px; margin: 0; font-size: .85rem; color: rgba(255,255,255,.85); }
+ .destination h3 { position: absolute; z-index: 1; left: 16px; right: 16px; bottom: 42px; margin: 0; font-size: clamp(1.05rem, 1.8vw, 1.6rem); line-height: 1.2; text-wrap: balance; }
+ .destination-facebook { color: #fff; text-decoration: none; }
+ .destination-facebook h3 { bottom: 44px; }
+ .destination-facebook .post-link {
+ position: absolute;
+ z-index: 1;
+ left: 16px;
+ right: 16px;
+ bottom: 14px;
+ font-size: .82rem;
+ font-weight: 700;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ }
+
+ .trip-types { background: var(--paper-2); }
+ .trip-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+ .trip-list div { min-height: 104px; display: flex; align-items: center; gap: 18px; padding: 22px 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: "Libre Baskerville", serif; font-size: 1.08rem; }
+ .trip-list span { color: var(--sun); font-family: "DM Sans", sans-serif; font-size: .78rem; font-weight: 700; }
+ .africa-friday { background: var(--paper-2); }
+ .af-post-list { list-style: none; margin: 2.5rem 0 0; padding: 0; border-top: 1px solid var(--line); }
+ .af-post-list li { display: grid; grid-template-columns: 130px 1fr auto; gap: 1rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+ .af-date { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+ .af-post-list a { font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+ .af-post-list a:hover { color: var(--ocean); text-decoration: underline; }
+ .af-tag { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--palm); white-space: nowrap; }
+
+ .why { background: var(--paper); }
+ .why-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(48px, 8vw, 108px); align-items: start; }
+ .why-intro { position: sticky; top: 112px; }
+ .why-intro h2 { font-size: clamp(2.2rem, 4vw, 3.65rem); letter-spacing: -.05em; }
+ .why-intro p { color: var(--muted); }
+ .why-items { border-top: 1px solid var(--line); }
+ .why-item { display: grid; grid-template-columns: 62px 1fr; gap: 20px; padding: 32px 0; border-bottom: 1px solid var(--line); }
+ .why-item b { color: var(--palm); font-size: .78rem; letter-spacing: .12em; }
+ .why-item h3 { margin-bottom: .65rem; font-size: clamp(1.25rem, 2vw, 1.65rem); }
+ .why-item p { margin: 0; color: var(--muted); }
+
+ .facebook {
+ padding: 72px 0;
+ background: #1769aa;
+ color: #fff;
+ }
+ .facebook-inner {
+ display: grid;
+ grid-template-columns: 58px minmax(0, 1fr) auto;
+ gap: 28px;
+ align-items: center;
+ }
+ .facebook-icon {
+ width: 58px;
+ height: 58px;
+ display: grid;
+ place-items: center;
+ border-radius: 50%;
+ background: #fff;
+ color: #1769aa;
+ }
+ .facebook-icon svg { width: 27px; height: 27px; fill: currentColor; }
+ .facebook h2 { margin: 0 0 .45rem; color: #fff; font-size: clamp(1.55rem, 3vw, 2.5rem); letter-spacing: -.035em; }
+ .facebook p { max-width: 680px; margin: 0; color: rgba(255, 255, 255, .88); }
+ .facebook .series-note { margin-bottom: .4rem; color: #fff; font-size: .9rem; font-weight: 700; }
+ #facebook-feed {
+ width: min(1080px, 100%);
+ margin: 38px auto 0;
+ }
+ .fb-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap: 18px;
+ }
+ .fb-card {
+ overflow: hidden;
+ background: #fff;
+ color: #173438;
+ border-radius: 12px;
+ box-shadow: 0 16px 38px rgba(4, 47, 79, .25);
+ text-align: left;
+ }
+ .fb-card img {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+ }
+ .fb-card iframe {
+ display: block;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 16 / 9;
+ border: 0;
+ background: #000;
+ }
+ .fb-card-body { padding: 16px 18px 18px; }
+ .facebook .fb-card .fb-date {
+ margin: 0 0 8px;
+ color: #526a6b;
+ font-size: .82rem;
+ letter-spacing: .06em;
+ text-transform: uppercase;
+ }
+ .fb-badge {
+ display: inline-block;
+ margin-left: 6px;
+ padding: 2px 8px;
+ border-radius: 999px;
+ background: #1769aa;
+ color: #fff;
+ font-size: .7rem;
+ letter-spacing: 0;
+ text-transform: none;
+ }
+ .facebook .fb-card .fb-text { margin: 0 0 12px; color: #173438; line-height: 1.55; }
+ .fb-link { color: #125b98; font-weight: 700; }
+ .facebook #facebook-feed .fb-follow { margin-top: 40px; text-align: center; }
+ .fb-follow a {
+ display: inline-block;
+ padding: .72rem 1.15rem;
+ border-radius: 999px;
+ background: #fff;
+ color: #084a4c;
+ font-weight: 700;
+ text-decoration: none;
+ }
+ .review {
+ padding: 76px 0;
+ background: var(--sun);
+ color: #193631;
+ }
+ .review-inner { display: grid; grid-template-columns: auto 1fr auto; gap: 26px; align-items: center; }
+ .stars { display: flex; gap: 6px; color: #193631; font-size: 1.25rem; letter-spacing: .08em; }
+ .review h2 { margin: 0; font-size: clamp(1.6rem, 3.2vw, 2.75rem); letter-spacing: -.035em; }
+ .review strong { font-size: clamp(3rem, 6vw, 5rem); line-height: 1; font-family: "Libre Baskerville", serif; }
+
+ .contact { padding-bottom: 74px; background: var(--ocean-deep); color: var(--paper); }
+ .contact-card {
+ display: grid;
+ grid-template-columns: 1fr auto;
+ gap: 48px;
+ align-items: end;
+ padding-bottom: 60px;
+ border-bottom: 1px solid color-mix(in srgb, var(--paper) 28%, transparent);
+ }
+ .contact p { margin: 1.2rem 0 0; color: color-mix(in srgb, var(--paper) 80%, transparent); }
+ .contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+ .contact-links .button { flex: 1 1 0; text-align: center; white-space: nowrap; }
+ .contact .button-secondary { color: var(--paper); }
+ footer {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 24px;
+ padding-top: 28px;
+ color: color-mix(in srgb, var(--paper) 72%, transparent);
+ font-size: .9rem;
+ }
+ footer a { text-underline-offset: 4px; }
+
+ @media (max-width: 900px) {
+ .hero { grid-template-columns: 1fr; }
+ .hero-copy { padding: 76px 36px 58px; }
+ .hero-media { padding: 48px 36px; }
+ .section-head, .about-grid, .why-grid { grid-template-columns: 1fr; gap: 34px; }
+ .why-intro { position: static; }
+ .destination-grid { grid-template-columns: repeat(2, 1fr); } .destination { min-height: 280px; }
+ 
+ .trip-list { grid-template-columns: repeat(2, 1fr); }
+ .facebook-inner { grid-template-columns: 58px 1fr; }
+ .facebook .button { grid-column: 2; justify-self: start; }
+ .review-inner { grid-template-columns: 1fr auto; }
+ .stars { grid-column: 1 / -1; }
+ .contact-card { grid-template-columns: 1fr; align-items: start; }
+ .contact-links { justify-content: flex-start; }
+ }
+
+ @media (max-width: 620px) {
+ .shell { width: min(100% - 28px, 1180px); }
+ .nav { min-height: 66px; }
+ .wordmark small { display: none; }
+ .nav .button { min-height: 44px; padding: .65rem .85rem; font-size: .84rem; }
+ .nav-email { display: none; }
+ .hero { min-height: 0; }
+ .hero-copy { padding: 60px 20px 48px; }
+ h1 { font-size: clamp(2.6rem, 12vw, 4.05rem); }
+ .hero-actions { flex-direction: column; align-items: stretch; }
+ .hero-media { padding: 36px 20px 60px; }
+ .experience-tag { width: 116px; height: 116px; right: -12px; bottom: 16px; font-size: .84rem; }
+ section { padding: 76px 0; }
+ .section-head { margin-bottom: 32px; }
+ .destination-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+ .destination:nth-child(n) { grid-column: 1; min-height: 260px; }
+ .trip-list { grid-template-columns: 1fr; }
+ .af-post-list li { grid-template-columns: 1fr auto; }
+ .af-date { grid-column: 1 / -1; }
+ .trip-list div { min-height: 88px; }
+ .facebook { padding: 58px 0; }
+ .facebook-inner { grid-template-columns: 1fr; gap: 18px; }
+ .facebook .button { grid-column: 1; justify-self: stretch; }
+ .review { padding: 62px 0; }
+ .review-inner { grid-template-columns: 1fr; gap: 10px; }
+ .contact-links { flex-direction: column; align-items: stretch; }
+ footer { align-items: flex-start; flex-direction: column; gap: 8px; }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { transition-duration: .01ms !important; }
+ }
+ 
+ .plan-hero { padding: 72px 0 24px; background: var(--sand); }
+ .plan-hero h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); margin-bottom: 1rem; }
+ .plan-hero p { max-width: 640px; color: var(--muted); font-size: 1.15rem; margin: 0; }
+ .plan-form-section { padding: 56px 0 104px; }
+ .form-wrap { max-width: 780px; }
+ .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+ .form-field { margin-bottom: 18px; }
+ .form-field label, .form-row label { display: block; font-weight: 700; margin-bottom: 6px; }
+ .form-field input, .form-row input, .form-field textarea { width: 100%; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); color: var(--ink); font: inherit; }
+ .form-field textarea { min-height: 150px; resize: vertical; }
+ .form-note { margin-top: 1.5rem; color: var(--muted); }
+ @media (max-width: 620px) { .form-row { grid-template-columns: 1fr; } .plan-hero { padding: 48px 0 20px; } }
+
+ .main-menu { display: flex; flex-wrap: wrap; gap: .55rem 1.5rem; align-items: center; padding-bottom: .9rem; font-size: .93rem; font-weight: 600; }
+ .main-menu a { color: var(--muted); text-decoration: none; white-space: nowrap; }
+ .main-menu a:hover { color: var(--ocean-deep); text-decoration: underline; text-underline-offset: 4px; }
+ .main-menu a.menu-cta { background: var(--ocean-deep); color: var(--paper); padding: .5rem 1rem; border-radius: 999px; font-weight: 700; }
+ .main-menu a.menu-cta:hover { text-decoration: none; transform: translateY(-1px); }
+ @media (max-width: 620px) { .main-menu { gap: .5rem 1rem; font-size: .88rem; padding-bottom: .7rem; } }
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header><div class="shell"><div class="nav"><a class="wordmark" href="index.html" aria-label="Irene's Travel home">Irene's Travel <small>Since 2008</small></a></div><nav class="main-menu" aria-label="Main"><a href="https://www.irenestravel.com/africa.html">Africa</a><a href="https://www.irenestravel.com/tahiti.html">Tahiti</a><a href="https://www.irenestravel.com/mexico-caribbean.html">Mexico &amp; Caribbean</a><a href="https://www.irenestravel.com/cruises.html">Cruises</a><a href="https://www.irenestravel.com/honeymoons.html">Honeymoons</a><a href="https://www.irenestravel.com/families-groups.html">Families &amp; Groups</a><a href="https://www.irenestravel.com/about.html">About Irene</a></nav></div></header><main id="main"><section class="plan-hero"><div class="shell"><p class="eyebrow">Start here</p><h1>Plan With Irene</h1><p>Tell me enough to understand the trip you have in mind. I'll take it from there.</p></div></section><section class="plan-form-section"><div class="shell"><div class="form-wrap"><form action="mailto:info@irenestravel.com" method="post" enctype="text/plain"><div class="form-row"><div><label>Name</label><input name="Name" required></div><div><label>Email</label><input type="email" name="Email" required></div></div><div class="form-row"><div><label>Where are you thinking about going?</label><input name="Destination"></div><div><label>Travel dates or timeframe</label><input name="Dates"></div></div><div class="form-row"><div><label>Number of travelers</label><input name="Travelers"></div><div><label>Approximate trip budget</label><input name="Budget"></div></div><div class="form-field"><label>What matters most on this trip?</label><textarea name="Priorities"></textarea></div><button class="button button-primary" type="submit">Send Trip Request</button></form><p class="form-note">Prefer email directly? Write to <a href="mailto:info@irenestravel.com">info@irenestravel.com</a> or call <a href="tel:+14089058747">(408) 905-8747</a>. Please don't include payment or passport details in a trip inquiry.</p></div></div></section></main><footer><div class="shell" style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;width:100%;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;"><span>© 2026 Irene's Travel.</span><span><a href="tel:+14089058747">Call (408) 905-8747</a> · <a href="mailto:info@irenestravel.com">info@irenestravel.com</a> · <a href="https://www.facebook.com/irenestravel">Facebook</a> · <a href="https://www.instagram.com/irenestravel/">Instagram</a></span></div></footer></body></html>
